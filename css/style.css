@@ -1,13 +1,11 @@
 :root {
-    /* ベースカラー */
-    --base-color: #f2fffa;
-    --main-color: #2a2e92;
-    --accent-color: #2FAC9E;
-    --text-color: #2a2a2a;
-    --white: #ffffff;
-    --black: #303030;
-    --light-gray: #e8e8e8;
-    --dark-gray: #838383;
+    --base-color: #0b0f1a;
+    --main-color: #3b82f6;
+    --accent-color: #22d3ee;
+    --text-color: #e6edf3;
+    --white: rgba(255,255,255,0.08);
+    --black: #020617;
+    --glass-border: rgba(255,255,255,0.15);
 }
 
 *,
@@ -25,12 +23,13 @@ body {
     margin: 0;
     font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     color: var(--text-color);
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.6;
-    background-color: var(--base-color);
-    position: relative;
-    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 10% 20%, #1e3a8a 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #0891b2 0%, transparent 40%),
+        var(--base-color);
+
+    min-height: 100vh;
 }
 
 /* リンクの基本スタイル */
@@ -41,7 +40,6 @@ a:link {
 
 a:hover {
     color: var(--accent-color);
-    text-decoration: underline;
 }
 
 a:visited {
@@ -75,86 +73,66 @@ h1.title {
 }
 
 /* ----------- */
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    pointer-events: none;
-    /* ← カテゴリ選択ができるようにする */
-}
-
 .bk_title {
-    margin: 5px;
+    margin: 1rem 0;
     pointer-events: auto;
 }
-
+/* ----------- */
 .category_box {
     pointer-events: auto;
-    /* ← これでクリック通す！ */
-    z-index: 20;
-    position: absolute;
-    top: 15%;
-    left: 1%;
 }
 
 .bk_sub_title {
     font-size: 1.15em;
 }
 
-.man {
-    position: absolute;
-    bottom: 1%;
-    left: 5%
+.category-link.active {
+    font-weight: bold;
+    color: #0d6efd;
 }
 
-.woman {
-    position: absolute;
-    bottom: 0%;
-    right: 1%
+.category{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
 }
-
-@media (max-width:768px) {
-
-    .bk_title,
-    .man,
-    .woman {
-        display: none;
-    }
-
-    .category_box {
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 20;
-        width: 75%;
-        font-size: 80%;
-    }
+.category-link{
+    display: block;
+    min-height: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    transition:  all .2s;
 }
+.category-link:hover {
+    transform: translateY(-3px);
 
+    border-color: var(--accent-color);
 
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.35);
+}
 
 /* ----------- */
 
-
-
-.container {
-    position: relative;
-    z-index: 2;
-    max-width: 420px;
-    margin: 0 auto 0;
-    padding: 1rem;
+.wrapper {
+    margin: 3rem auto;
+    padding: 1.5rem;
     padding-bottom: 7rem;
-    /* 追従ボタン対策 */
-    background-color: var(--white);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    min-height: 100svh;
-    min-height: 100vh;
-    height: auto;
-    overflow-y: auto;
+
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35);
 }
 
 header h1 {
@@ -165,12 +143,18 @@ header h1 {
 
 h3.q-title {
     font-size: 1.1em;
-    background-color: var(--accent-color);
-    padding: 0.5rem;
-    color: var(--white);
-    margin-bottom: 0.5em;
-}
 
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #22d3ee
+        );
+
+    padding: .6rem;
+    color: white;
+    border-radius: 6px;
+}
 h3.q-title span {
     font-size: 0.8rem;
 }
@@ -181,21 +165,33 @@ main {
 
 button {
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #22d3ee
+    );
+
     border: none;
-    border-radius: 8px;
-    background-color: #007bff;
     color: white;
-    cursor: pointer;
-    margin-top: 1rem;
+
+    transition: all .2s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.35);
 }
 
 #progress-bar {
-    background-color: #007bff;
+    background:
+        linear-gradient(
+            90deg,
+            #22d3ee,
+            #3b82f6
+        );
     height: 20px;
     width: 0;
     color: white;
@@ -206,7 +202,7 @@ button:hover {
 
 .progress {
     width: 100%;
-    background-color: #e0e0e0;
+    background: rgba(255,255,255,.08);
     border-radius: 5px;
     margin-top: 1rem;
 }
@@ -214,12 +210,11 @@ button:hover {
 .next-btn {
     position: fixed;
     bottom: 4.5rem;
-    /* フッターの上にずらす */
-    width: 420px;
-    padding: 0 1rem;
+
+    width: min(900px, 90%);
+
     left: 50%;
     transform: translateX(-50%);
-    width: 420px;
 }
 
 .text-muted {
@@ -228,21 +223,17 @@ button:hover {
 
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 420px;
-    padding: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 0;
     box-sizing: border-box;
     font-size: 11px;
     line-height: 1;
     text-align: center;
     font-size: 0.9rem;
     color: #666;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 0.5rem 0;
+    background: rgba(0,0,0,.45);
+    backdrop-filter: blur(10px);
     /* z-index: 10; */
 }
 
@@ -271,7 +262,3 @@ footer {
 }
 
 
-.category-link.active {
-    font-weight: bold;
-    color: #0d6efd;
-}

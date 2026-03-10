@@ -1,5 +1,3 @@
-// ui.js
-
 function showQuizUI() {
   document.querySelector(".category_box").style.display = "none";
   document.getElementById("start-container").style.display = "none";
@@ -11,8 +9,12 @@ function showQuizUI() {
 }
 
 function updateTitle(category) {
-  document.querySelector(".title").innerHTML =
+  const title = document.querySelector(".bk_title");
+
+  if (!title) return;
+
+  title.innerHTML =
     `<a href="#" id="title-reload">
-        ウェブデザイン技能検定<br>3級AI対策問題
-        </a>` + (category ? `<br><small>（${category}）</small>` : "");
+      ウェブデザイン技能検定3級対策問題
+     </a>` + (category ? `<br><small>（${category}）</small>` : "");
 }

@@ -74,7 +74,8 @@ h1.title {
 
 /* ----------- */
 .bk_title {
-    margin: 1rem 0;
+    margin: 0;
+    font-size:1.25rem;
     pointer-events: auto;
 }
 /* ----------- */
@@ -93,7 +94,7 @@ h1.title {
 
 .category{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 12px;
     list-style: none;
     padding: 0;
@@ -110,6 +111,7 @@ h1.title {
     border: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(8px);
     transition:  all .2s;
+    font-size:0.8rem
 }
 .category-link:hover {
     transform: translateY(-3px);
@@ -123,7 +125,9 @@ h1.title {
 /* ----------- */
 
 .wrapper {
-    margin: 3rem auto;
+    max-width: 1200px;
+    width: calc(100% - 2rem);
+    margin: 1rem auto;
     padding: 1.5rem;
     padding-bottom: 7rem;
 
@@ -133,6 +137,7 @@ h1.title {
     border-radius: 14px;
 
     box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    min-height: 80vh;
 }
 
 header h1 {
@@ -204,23 +209,23 @@ button:hover {
     width: 100%;
     background: rgba(255,255,255,.08);
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 .next-btn {
-    position: fixed;
-    bottom: 4.5rem;
 
-    width: min(900px, 90%);
-
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .text-muted {
     font-size: .8rem;
 }
 
+
+.options{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap:1rem
+}
 
 footer {
     width: 100%;
@@ -234,7 +239,11 @@ footer {
     color: #666;
     background: rgba(0,0,0,.45);
     backdrop-filter: blur(10px);
-    /* z-index: 10; */
+    /* z-index: 10;
+    position: fixed;
+    left: 0;
+    bottom:0; */
+
 }
 
 

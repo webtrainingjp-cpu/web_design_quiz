@@ -39,4 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
       showFinalResultWithCategoryBreakdown(score, questions, categoryStats);
     }
   });
+
+  // もう一度挑戦
+  document.getElementById("retry-button").addEventListener("click", () => {
+    location.reload();
+  });
 });

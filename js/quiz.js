@@ -62,7 +62,9 @@ function showQuestion() {
 
   progressInfo.innerHTML = `問題 ${currentQuestionIndex + 1} / ${questions.length}`;
 
-  const percent = Math.round((currentQuestionIndex / questions.length) * 100);
+  const percent = Math.round(
+    ((currentQuestionIndex + 1) / questions.length) * 100,
+  );
 
   progressBar.style.width = percent + "%";
   progressBar.innerText = percent + "%";
@@ -146,22 +148,38 @@ function checkAnswer(selectedIndex) {
 
   if (selectedIndex === correctIndex) {
     score++;
-    result.innerHTML = "正解です！";
+    result.innerHTML = "✔ 正解！";
+    result.style.color = "#4caf50";
+
+    setTimeout(() => {
+      nextQuestion();
+    }, 800);
   } else {
-    result.innerHTML = "不正解です";
+    result.innerHTML = "✖ 不正解";
+    result.style.color = "#ff5252";
+
+    const explanation = q.explanation;
+
+    const modalText = document.getElementById("explanation-text");
+    modalText.innerHTML = explanation;
+
+    const modalElement = document.getElementById("explanationModal");
+
+    const modal = new bootstrap.Modal(modalElement);
+
+    modalElement.addEventListener(
+      "hidden.bs.modal",
+      function () {
+        nextQuestion();
+      },
+      { once: true },
+    );
+
+    modal.show();
   }
-
-  // 解説表示
-  const explanation = q.explanation;
-
-  const modalText = document.getElementById("explanation-text");
-  modalText.innerHTML = explanation;
-
-  const modal = new bootstrap.Modal(
-    document.getElementById("explanationModal"),
-  );
-
-  modal.show();
+  buttons.forEach((btn) => {
+    btn.disabled = true;
+  });
 }
 
 // 最終結果

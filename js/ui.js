@@ -5,7 +5,9 @@ function showQuizUI() {
   document.getElementById("progress-info").style.display = "block";
   document.querySelector(".progress").style.display = "block";
   document.getElementById("quiz-container").style.display = "block";
-  document.getElementById("next-button").style.display = "block";
+
+  // 自動遷移に変更したため、次へ進むボタンは常に非表示にする
+  document.getElementById("next-button").style.display = "none";
 }
 
 function updateTitle(category) {
@@ -14,7 +16,7 @@ function updateTitle(category) {
   if (!title) return;
 
   title.innerHTML =
-    `<a href="#" id="title-reload">
+    `<a href="index.html" id="title-reload">
       ウェブデザイン技能検定3級対策問題
      </a>` + (category ? `<br><small>（${category}）</small>` : "");
 }

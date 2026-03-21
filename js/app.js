@@ -29,17 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startQuiz();
   });
 
-  // 次の問題
-  document.getElementById("next-button").addEventListener("click", () => {
-    currentQuestionIndex++;
-
-    if (currentQuestionIndex < questions.length) {
-      showQuestion();
-    } else {
-      showFinalResultWithCategoryBreakdown(score, questions, categoryStats);
-    }
-  });
-
   // もう一度挑戦
   document.getElementById("retry-button").addEventListener("click", () => {
     location.reload();

@@ -11,6 +11,19 @@ let answered = false;
 let currentCategory = null;
 
 // ==============================
+// 遷移タイミング設定
+// ==============================
+
+// 正解時は少し余韻を持たせてから次の問題へ進む
+const CORRECT_RESULT_DELAY = 1100;
+
+// 不正解時はモーダルを閉じた後に少し待ってから進む
+const INCORRECT_RESULT_DELAY = 350;
+
+// フェードアウト / フェードインの長さ
+const QUIZ_FADE_DURATION = 350;
+
+// ==============================
 // シャッフル
 // ==============================
 
@@ -22,6 +35,62 @@ function shuffleArray(array) {
   }
 
   return array;
+}
+
+// ==============================
+// 共通待機処理
+// ==============================
+
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+// ==============================
+// フェード処理
+// ==============================
+
+function getQuizContainer() {
+  return document.getElementById("quiz-container");
+}
+
+async function fadeOutQuizContainer() {
+  const container = getQuizContainer();
+
+  if (!container) return;
+
+  container.classList.add("is-fading-out");
+
+  await wait(QUIZ_FADE_DURATION);
+}
+
+async function fadeInQuizContainer() {
+  const container = getQuizContainer();
+
+  if (!container) return;
+
+  // クラスの切り替えを確実に反映させるために再描画を挟む
+  container.classList.remove("is-fading-out");
+  void container.offsetWidth;
+
+  await wait(QUIZ_FADE_DURATION);
+}
+
+// ==============================
+// 次の問題へ進む前の演出
+// ==============================
+
+async function moveToNextQuestionWithFade(delayBeforeFade = 0) {
+  if (delayBeforeFade > 0) {
+    await wait(delayBeforeFade);
+  }
+
+  await fadeOutQuizContainer();
+
+  nextQuestion();
+
+  await fadeInQuizContainer();
 }
 
 // ==============================
@@ -187,15 +256,16 @@ function checkAnswer(selectedIndex) {
   if (selectedIndex === correctIndex) {
     score++;
 
+    // 結果表示を見やすくするため、正解用の見た目クラスを付ける
+    result.className = "answer-result-box answer-result-correct";
     result.innerHTML = "✔ 正解！";
-    result.style.color = "#4caf50";
 
-    setTimeout(() => {
-      nextQuestion();
-    }, 800);
+    // 正解表示を少し見せてから、ゆっくり次の問題へ切り替える
+    moveToNextQuestionWithFade(CORRECT_RESULT_DELAY);
   } else {
+    // 結果表示を見やすくするため、不正解用の見た目クラスを付ける
+    result.className = "answer-result-box answer-result-incorrect";
     result.innerHTML = "✖ 不正解";
-    result.style.color = "#ff5252";
 
     const explanation = q.explanation;
 
@@ -210,7 +280,8 @@ function checkAnswer(selectedIndex) {
     modalElement.addEventListener(
       "hidden.bs.modal",
       function () {
-        nextQuestion();
+        // 解説モーダルを閉じたあと、少し間を置いてから次へ進む
+        moveToNextQuestionWithFade(INCORRECT_RESULT_DELAY);
       },
       { once: true },
     );

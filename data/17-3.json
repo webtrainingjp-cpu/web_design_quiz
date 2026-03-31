@@ -1,0 +1,258 @@
+[
+    {
+        "question": "class属性はグローバル属性であり、すべての要素に指定できる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "class属性はグローバル属性であり、すべての要素で使用可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "HTML文書にはJavaScriptファイルを1つだけしか読み込めない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "複数のJavaScriptファイルを読み込むことができます。",
+        "category": "JavaScript"
+    },
+    {
+        "question": "カラーコード #000000 を指定すると色は透明になる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "#000000は黒色であり透明ではありません。",
+        "category": "CSS"
+    },
+    {
+        "question": "URLがhttpsから始まる場合、通信は暗号化されている。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "HTTPSはTLSによって通信が暗号化されています。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "ディスプレイの文字は高さ3mm以上が望ましい。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "安全衛生の観点で推奨されています。",
+        "category": "労働・安全"
+    },
+    {
+        "question": "GIFは可逆圧縮で256色まで扱える。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "GIFは可逆圧縮で最大256色です。",
+        "category": "画像"
+    },
+    {
+        "question": "個人情報取得時は利用目的を事前に公表または通知する必要がある。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "個人情報保護法の基本原則です。",
+        "category": "法律"
+    },
+    {
+        "question": "header要素とfooter要素はページ内に1つずつしか置けない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "セクションごとに複数使用可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "alt属性は画像の見た目を説明するためのテキストである。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "altは代替テキストであり見た目説明ではありません。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "著作権は登録しないと発生しない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "著作権は創作時点で自動的に発生します。",
+        "category": "著作権"
+    },
+    {
+        "question": "p要素の中に配置できる要素はどれか。",
+        "choices": [
+            "p",
+            "h3",
+            "ul",
+            "img"
+        ],
+        "correct": 3,
+        "explanation": "pの中にはインライン要素のみ配置可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "検索エンジンのクローラーの巡回を拒否するファイルはどれか。",
+        "choices": [
+            "sitemap.xml",
+            "sitemaps.xml",
+            "robot.txt",
+            "robots.txt"
+        ],
+        "correct": 3,
+        "explanation": "robots.txtで制御します。",
+        "category": "SEO"
+    },
+    {
+        "question": "順序なしリストに使う要素はどれか。",
+        "choices": [
+            "dl",
+            "ol",
+            "ul",
+            "list"
+        ],
+        "correct": 2,
+        "explanation": "ulが正解です。",
+        "category": "HTML"
+    },
+    {
+        "question": "進捗状況を表示するUIはどれか。",
+        "choices": [
+            "アドレスバー",
+            "プログレスバー",
+            "スクロールバー",
+            "スライダー"
+        ],
+        "correct": 1,
+        "explanation": "progress barです。",
+        "category": "UI"
+    },
+    {
+        "question": "文字色を赤にするCSSはどれか。",
+        "choices": [
+            "color:#ff0000",
+            "color:#00ff00",
+            "color:#0000ff",
+            "color:#ffff00"
+        ],
+        "correct": 0,
+        "explanation": "#ff0000が赤です。",
+        "category": "CSS"
+    },
+    {
+        "question": "最初のページだけで離脱した割合はどれか。",
+        "choices": [
+            "セッション数",
+            "コンバージョン率",
+            "直帰率",
+            "離脱率"
+        ],
+        "correct": 2,
+        "explanation": "直帰率です。",
+        "category": "マーケティング"
+    },
+    {
+        "question": "DDoS攻撃とはどれか。",
+        "choices": [
+            "ブルートフォース",
+            "設定改ざん",
+            "SQLインジェクション",
+            "大量アクセス攻撃"
+        ],
+        "correct": 3,
+        "explanation": "サーバをダウンさせる攻撃です。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "JISナビゲーションガイドラインの正しい内容はどれか。",
+        "choices": [
+            "ナビゲート・現在位置確認",
+            "タブ整理・履歴削除",
+            "文字サイズ変更・コントラスト変更",
+            "構成把握・ポリシー確認"
+        ],
+        "correct": 0,
+        "explanation": "ナビゲートと現在位置把握が重要です。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "ボーダー内側の余白はどれか。",
+        "choices": [
+            "margin",
+            "inner",
+            "inner-margin",
+            "padding"
+        ],
+        "correct": 3,
+        "explanation": "paddingが内側余白です。",
+        "category": "CSS"
+    },
+    {
+        "question": "公衆送信権はどの権利に含まれるか。",
+        "choices": [
+            "著作権",
+            "商標権",
+            "特許権",
+            "意匠権"
+        ],
+        "correct": 0,
+        "explanation": "著作権の一部です。",
+        "category": "著作権"
+    },
+    {
+        "question": "table要素は何を表すか。",
+        "choices": [
+            "図",
+            "表",
+            "段",
+            "目次"
+        ],
+        "correct": 1,
+        "explanation": "表を表します。",
+        "category": "HTML"
+    },
+    {
+        "question": "通信を暗号化する技術はどれか。",
+        "choices": [
+            "FTP",
+            "DNS",
+            "HTTP",
+            "TLS"
+        ],
+        "correct": 3,
+        "explanation": "TLSが暗号化を担います。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "フォーム送信ボタンを作る要素はどれか。",
+        "choices": [
+            "b",
+            "sub",
+            "submit",
+            "input"
+        ],
+        "correct": 3,
+        "explanation": "input type=\"submit\"で作成します。",
+        "category": "HTML"
+    }
+]

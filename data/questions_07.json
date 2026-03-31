@@ -1,0 +1,782 @@
+[
+    {
+        "question": "img要素のalt属性に指定すべき値は、画像が利用できない場合の代替テキストではなく、画像を補足する説明である。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "altは画像の代替テキストであり、画像の補足説明ではありません。",
+        "category": "HTML・アクセシビリティ"
+    },
+    {
+        "question": "情報機器作業者の1日の作業時間は300分程度が望ましい。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "ガイドラインでは300分程度が目安とされています。",
+        "category": "労働・安全"
+    },
+    {
+        "question": "パスワードは管理しやすくするために平文で保存すべきである。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "パスワードはハッシュ化して保存する必要があります。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "HTMLの属性値を引用符で囲まない場合、必ず文法エラーになる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "引用符なしでも許可される場合があります。",
+        "category": "HTML"
+    },
+    {
+        "question": "複製権は著作権に含まれる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "複製権は著作権の一部です。",
+        "category": "著作権"
+    },
+    {
+        "question": "html要素にはlang属性を指定することが推奨されている。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "アクセシビリティのために重要です。",
+        "category": "HTML・アクセシビリティ"
+    },
+    {
+        "question": "フィッシング詐欺とは、偽サイトに誘導して個人情報を盗む行為である。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "代表的な詐欺手法です。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "カラーコード #00ff00 は緑色である。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "緑の最大値です。",
+        "category": "CSS"
+    },
+    {
+        "question": "JPEGは可逆圧縮で画質劣化がない形式である。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "JPEGは非可逆圧縮です。",
+        "category": "画像"
+    },
+    {
+        "question": "不要になったWebページはそのまま公開し続けるべきである。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "削除・リダイレクトが望ましいです。",
+        "category": "運用"
+    },
+    {
+        "question": "マウスを重ねた時にスタイルを適用するCSS擬似クラスはどれか。",
+        "choices": [
+            "#change:over",
+            "#change:down",
+            "#change:selected",
+            "#change:hover"
+        ],
+        "correct": 3,
+        "explanation": ":hover はマウスオーバー時に適用されます。",
+        "category": "CSS"
+    },
+    {
+        "question": "行の高さを指定するCSSプロパティはどれか。",
+        "choices": [
+            "height",
+            "display",
+            "line-box",
+            "line-height"
+        ],
+        "correct": 3,
+        "explanation": "line-height は行の高さを制御します。",
+        "category": "CSS"
+    },
+    {
+        "question": "OSIモデルのアプリケーション層のプロトコルはどれか。",
+        "choices": [
+            "HTTP",
+            "PPP",
+            "IP",
+            "TCP"
+        ],
+        "correct": 0,
+        "explanation": "HTTPはアプリケーション層です。",
+        "category": "ネットワーク"
+    },
+    {
+        "question": "p { background-color: #aaa; } の説明として正しいものはどれか。",
+        "choices": [
+            "id名がpの要素に適用",
+            "class名がpの要素に適用",
+            "全てのp要素に適用",
+            "エラーになる"
+        ],
+        "correct": 2,
+        "explanation": "要素セレクタなので全pタグに適用されます。",
+        "category": "CSS"
+    },
+    {
+        "question": "JIS X 8341-3のキーボード操作ガイドラインとして正しいものはどれか。",
+        "choices": [
+            "全ての機能をキーボードで操作できる",
+            "ナビだけ操作できればよい",
+            "ブラウザ機能のみ対象",
+            "UIだけ操作できればよい"
+        ],
+        "correct": 0,
+        "explanation": "全機能が対象です。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "DDoS攻撃の目的はどれか。",
+        "choices": [
+            "情報を盗む",
+            "サーバを過負荷にして停止させる",
+            "データ改ざん",
+            "ウイルス感染"
+        ],
+        "correct": 1,
+        "explanation": "大量アクセスでサービス停止させます。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "黒文字のとき最もコントラストが高い背景色はどれか。",
+        "choices": [
+            "#111111",
+            "#999999",
+            "#ffffff",
+            "#zzzzzz"
+        ],
+        "correct": 2,
+        "explanation": "白が最大コントラストです。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "li内の全てのb要素を対象にするセレクタはどれか。",
+        "choices": [
+            "li b",
+            "li > b",
+            "li ~ b",
+            "li::(b)"
+        ],
+        "correct": 0,
+        "explanation": "子孫セレクタです。",
+        "category": "CSS"
+    },
+    {
+        "question": "imgのアクセシビリティで重要な属性はどれか。",
+        "choices": [
+            "alt",
+            "lang",
+            "sizes",
+            "width"
+        ],
+        "correct": 0,
+        "explanation": "alt属性が最重要です。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "等幅フォントを表すfont-familyはどれか。",
+        "choices": [
+            "cursive",
+            "monospace",
+            "sans-serif",
+            "serif"
+        ],
+        "correct": 1,
+        "explanation": "monospaceが等幅です。",
+        "category": "CSS"
+    },
+    {
+        "question": "blockquote要素は何を表すか。",
+        "choices": [
+            "引用文",
+            "囲み記事",
+            "インデント範囲",
+            "段落"
+        ],
+        "correct": 0,
+        "explanation": "引用文です。",
+        "category": "HTML"
+    },
+    {
+        "question": "ボーダーの外側の余白を指定するプロパティはどれか。",
+        "choices": [
+            "padding",
+            "spacing",
+            "flame",
+            "margin"
+        ],
+        "correct": 3,
+        "explanation": "marginは外側の余白です。",
+        "category": "CSS"
+    },
+    {
+        "question": "サーバ証明書の目的はどれか。",
+        "choices": [
+            "デザイン改善",
+            "負荷軽減",
+            "通信の暗号化",
+            "SEO向上"
+        ],
+        "correct": 2,
+        "explanation": "HTTPSによる安全通信です。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "HTMLのルート要素はどれか。",
+        "choices": [
+            "rt",
+            "html",
+            "body",
+            "section"
+        ],
+        "correct": 1,
+        "explanation": "htmlがルート要素です。",
+        "category": "HTML"
+    },
+    {
+        "question": "class属性はグローバル属性であり、すべての要素に指定できる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "class属性はグローバル属性であり、すべての要素で使用可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "HTML文書にはJavaScriptファイルを1つだけしか読み込めない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "複数のJavaScriptファイルを読み込むことができます。",
+        "category": "JavaScript"
+    },
+    {
+        "question": "カラーコード #000000 を指定すると色は透明になる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "#000000は黒色であり透明ではありません。",
+        "category": "CSS"
+    },
+    {
+        "question": "URLがhttpsから始まる場合、通信は暗号化されている。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "HTTPSはTLSによって通信が暗号化されています。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "ディスプレイの文字は高さ3mm以上が望ましい。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "安全衛生の観点で推奨されています。",
+        "category": "労働・安全"
+    },
+    {
+        "question": "GIFは可逆圧縮で256色まで扱える。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "GIFは可逆圧縮で最大256色です。",
+        "category": "画像"
+    },
+    {
+        "question": "個人情報取得時は利用目的を事前に公表または通知する必要がある。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "個人情報保護法の基本原則です。",
+        "category": "法律"
+    },
+    {
+        "question": "header要素とfooter要素はページ内に1つずつしか置けない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "セクションごとに複数使用可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "alt属性は画像の見た目を説明するためのテキストである。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "altは代替テキストであり見た目説明ではありません。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "著作権は登録しないと発生しない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "著作権は創作時点で自動的に発生します。",
+        "category": "著作権"
+    },
+    {
+        "question": "p要素の中に配置できる要素はどれか。",
+        "choices": [
+            "p",
+            "h3",
+            "ul",
+            "img"
+        ],
+        "correct": 3,
+        "explanation": "pの中にはインライン要素のみ配置可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "検索エンジンのクローラーの巡回を拒否するファイルはどれか。",
+        "choices": [
+            "sitemap.xml",
+            "sitemaps.xml",
+            "robot.txt",
+            "robots.txt"
+        ],
+        "correct": 3,
+        "explanation": "robots.txtで制御します。",
+        "category": "SEO"
+    },
+    {
+        "question": "順序なしリストに使う要素はどれか。",
+        "choices": [
+            "dl",
+            "ol",
+            "ul",
+            "list"
+        ],
+        "correct": 2,
+        "explanation": "ulが正解です。",
+        "category": "HTML"
+    },
+    {
+        "question": "進捗状況を表示するUIはどれか。",
+        "choices": [
+            "アドレスバー",
+            "プログレスバー",
+            "スクロールバー",
+            "スライダー"
+        ],
+        "correct": 1,
+        "explanation": "progress barです。",
+        "category": "UI"
+    },
+    {
+        "question": "文字色を赤にするCSSはどれか。",
+        "choices": [
+            "color:#ff0000",
+            "color:#00ff00",
+            "color:#0000ff",
+            "color:#ffff00"
+        ],
+        "correct": 0,
+        "explanation": "#ff0000が赤です。",
+        "category": "CSS"
+    },
+    {
+        "question": "最初のページだけで離脱した割合はどれか。",
+        "choices": [
+            "セッション数",
+            "コンバージョン率",
+            "直帰率",
+            "離脱率"
+        ],
+        "correct": 2,
+        "explanation": "直帰率です。",
+        "category": "マーケティング"
+    },
+    {
+        "question": "DDoS攻撃とはどれか。",
+        "choices": [
+            "ブルートフォース",
+            "設定改ざん",
+            "SQLインジェクション",
+            "大量アクセス攻撃"
+        ],
+        "correct": 3,
+        "explanation": "サーバをダウンさせる攻撃です。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "JISナビゲーションガイドラインの正しい内容はどれか。",
+        "choices": [
+            "ナビゲート・現在位置確認",
+            "タブ整理・履歴削除",
+            "文字サイズ変更・コントラスト変更",
+            "構成把握・ポリシー確認"
+        ],
+        "correct": 0,
+        "explanation": "ナビゲートと現在位置把握が重要です。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "ボーダー内側の余白はどれか。",
+        "choices": [
+            "margin",
+            "inner",
+            "inner-margin",
+            "padding"
+        ],
+        "correct": 3,
+        "explanation": "paddingが内側余白です。",
+        "category": "CSS"
+    },
+    {
+        "question": "公衆送信権はどの権利に含まれるか。",
+        "choices": [
+            "著作権",
+            "商標権",
+            "特許権",
+            "意匠権"
+        ],
+        "correct": 0,
+        "explanation": "著作権の一部です。",
+        "category": "著作権"
+    },
+    {
+        "question": "table要素は何を表すか。",
+        "choices": [
+            "図",
+            "表",
+            "段",
+            "目次"
+        ],
+        "correct": 1,
+        "explanation": "表を表します。",
+        "category": "HTML"
+    },
+    {
+        "question": "通信を暗号化する技術はどれか。",
+        "choices": [
+            "FTP",
+            "DNS",
+            "HTTP",
+            "TLS"
+        ],
+        "correct": 3,
+        "explanation": "TLSが暗号化を担います。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "フォーム送信ボタンを作る要素はどれか。",
+        "choices": [
+            "b",
+            "sub",
+            "submit",
+            "input"
+        ],
+        "correct": 3,
+        "explanation": "input type=\"submit\"で作成します。",
+        "category": "HTML"
+    },
+    {
+        "question": "id属性はグローバル属性であり、全ての要素に指定できる。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "id属性はグローバル属性であり、全ての要素に指定可能です。",
+        "category": "HTML"
+    },
+    {
+        "question": "著作権は著作者が死亡すると消滅する。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "著作権は死後70年存続します。",
+        "category": "著作権"
+    },
+    {
+        "question": "ドメイン名の長さには制限がある。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "ドメインは文字数制限があります。",
+        "category": "ネットワーク"
+    },
+    {
+        "question": "画面や周辺の明るさの差は小さくするのが望ましい。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "目の負担軽減のためです。",
+        "category": "労働・安全"
+    },
+    {
+        "question": "パスワードの使い回しはセキュリティリスクを高める。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "漏洩時に被害が拡大します。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "ワイヤーフレームはサイト全体の構造を把握しやすくする。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "設計段階での可視化に有効です。",
+        "category": "設計"
+    },
+    {
+        "question": "alt属性は画像の補足情報を与えるためのものである。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "altは代替テキストであり補足説明ではありません。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "DNSはドメイン名とIPアドレスを対応させる仕組みである。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "名前解決の仕組みです。",
+        "category": "ネットワーク"
+    },
+    {
+        "question": "ゼロデイ攻撃は修正前の脆弱性を狙う攻撃である。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 0,
+        "explanation": "ゼロデイ攻撃とは、まだ修正されていないセキュリティの弱点（脆弱性）を狙った攻撃です。ソフトやOSに問題が見つかってから、修正プログラム（パッチ）が配布されるまでの間に攻撃されるため、防ぐのが難しいのが特徴です。",
+        "category": "セキュリティ"
+    },
+    {
+        "question": "style属性は特定のHTML要素にしか使えない。",
+        "choices": [
+            "正しい",
+            "正しくない"
+        ],
+        "correct": 1,
+        "explanation": "styleはグローバル属性です。",
+        "category": "HTML"
+    },
+    {
+        "question": "span要素の内部に配置できる要素はどれか。",
+        "choices": [
+            "a",
+            "p",
+            "h1",
+            "ul"
+        ],
+        "correct": 0,
+        "explanation": "spanはインライン要素なのでaなどが入ります。",
+        "category": "HTML"
+    },
+    {
+        "question": "main要素を非表示にする正しいJavaScriptはどれか。",
+        "choices": [
+            "main",
+            "main.display",
+            "main.block",
+            "main.style.display"
+        ],
+        "correct": 3,
+        "explanation": "style.displayで制御します。",
+        "category": "JavaScript"
+    },
+    {
+        "question": "JISX8341-3:2016が定めるアクセシビリティ４原則で支援技術との互換性に関係するものはどれか。",
+        "choices": [
+            "知覚可能",
+            "操作可能",
+            "理解可能",
+            "堅ろう"
+        ],
+        "correct": 3,
+        "explanation": "Robust（堅ろう）が該当します。",
+        "category": "アクセシビリティ"
+    },
+    {
+        "question": "CSSの色を表す値の中で、最も明るい色はどれか。",
+        "choices": [
+            "#999999",
+            "#bbbbbb",
+            "#666666",
+            "#eeeeee"
+        ],
+        "correct": 3,
+        "explanation": "カラーコードは #RRGGBB という形式で、数字が大きいほど明るい色になります。#eeeeee はそれぞれの値が大きく、白（#ffffff）に近い明るい灰色なので最も明るい色です。",
+        "category": "CSS"
+    },
+    {
+        "question": "PVの略はどれか。",
+        "choices": [
+            "ページビジュアル",
+            "ページビュー",
+            "パーフェクトビジュアル",
+            "パーソナルビュー"
+        ],
+        "correct": 1,
+        "explanation": "Page Viewです。",
+        "category": "マーケティング"
+    },
+    {
+        "question": "idセレクタに使用する記号はどれか。",
+        "choices": [
+            ".",
+            "#",
+            "*",
+            ":"
+        ],
+        "correct": 1,
+        "explanation": "#がidセレクタです。",
+        "category": "CSS"
+    },
+    {
+        "question": "文字色を指定するCSSプロパティはどれか。",
+        "choices": [
+            "color",
+            "text-color",
+            "background-color",
+            "foreground-color"
+        ],
+        "correct": 0,
+        "explanation": "colorプロパティを使用します。",
+        "category": "CSS"
+    },
+    {
+        "question": "li要素は何を表すか。",
+        "choices": [
+            "リンク",
+            "1行",
+            "リスト項目",
+            "段落区切り"
+        ],
+        "correct": 2,
+        "explanation": "リストの項目です。",
+        "category": "HTML"
+    },
+    {
+        "question": "個人情報を国外に提供する際に必要なものはどれか。",
+        "choices": [
+            "委員会許可",
+            "本人同意",
+            "秘密保持契約",
+            "事前届出"
+        ],
+        "correct": 1,
+        "explanation": "原則として本人の同意が必要です。",
+        "category": "法律"
+    },
+    {
+        "question": "セクショニングコンテンツはどれか。",
+        "choices": [
+            "p",
+            "hr",
+            "aside",
+            "hgroup"
+        ],
+        "correct": 2,
+        "explanation": "asideが該当します。",
+        "category": "HTML"
+    },
+    {
+        "question": "select要素の中で、選択できない項目を作りたい場合、option要素に指定する属性はどれか。",
+        "choices": [
+            "unselected",
+            "activated=false",
+            "disabled",
+            "no-use"
+        ],
+        "correct": 2,
+        "explanation": "selectタグの中のoptionに disabled を付けると、その項目は選択できなくなります。例えば <option disabled>選べません</option> のように書くと、表示はされるがクリックできない状態になります。",
+        "category": "HTML"
+    },
+    {
+        "question": "ステータスコード200は何を示すか。",
+        "choices": [
+            "クライアントエラー",
+            "サーバエラー",
+            "失敗",
+            "成功"
+        ],
+        "correct": 3,
+        "explanation": "リクエスト成功です。",
+        "category": "ネットワーク"
+    },
+    {
+        "question": "ラジオボタンとチェックボックスを作れる要素はどれか。",
+        "choices": [
+            "input",
+            "button",
+            "select",
+            "multibtn"
+        ],
+        "correct": 0,
+        "explanation": "input要素 type属性で指定します。",
+        "category": "HTML"
+    }
+]

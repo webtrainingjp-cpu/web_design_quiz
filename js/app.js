@@ -11,18 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // カテゴリークリック
-  document.querySelectorAll(".category-link").forEach((item) => {
-    item.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const category = this.textContent.trim();
-
-      showQuizUI();
-      startQuiz(category);
-    });
-  });
-
   // ランダムスタート
   document.getElementById("start-button").addEventListener("click", () => {
     showQuizUI();

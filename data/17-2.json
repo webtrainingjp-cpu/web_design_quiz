@@ -1,0 +1,270 @@
+[
+  {
+    "question": "img要素のalt属性に指定すべき値は、画像が利用できない場合の代替テキストではなく、画像を補足する説明である。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 1,
+    "explanation": "altは画像の代替テキストであり、画像の補足説明ではありません。",
+    "category": "HTML・アクセシビリティ"
+  },
+  {
+    "question": "情報機器作業者の1日の作業時間は300分程度が望ましい。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 0,
+    "explanation": "ガイドラインでは300分程度が目安とされています。",
+    "category": "労働・安全"
+  },
+  {
+    "question": "パスワードは管理しやすくするために平文で保存すべきである。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 1,
+    "explanation": "パスワードはハッシュ化して保存する必要があります。",
+    "category": "セキュリティ"
+  },
+  {
+    "question": "HTMLの属性値を引用符で囲まない場合、必ず文法エラーになる。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 1,
+    "explanation": "引用符なしでも許可される場合があります。",
+    "category": "HTML"
+  },
+  {
+    "question": "複製権は著作権に含まれる。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 0,
+    "explanation": "複製権は著作権の一部です。",
+    "category": "著作権"
+  },
+  {
+    "question": "html要素にはlang属性を指定することが推奨されている。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 0,
+    "explanation": "アクセシビリティのために重要です。",
+    "category": "HTML・アクセシビリティ"
+  },
+  {
+    "question": "フィッシング詐欺とは、偽サイトに誘導して個人情報を盗む行為である。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 0,
+    "explanation": "代表的な詐欺手法です。",
+    "category": "セキュリティ"
+  },
+  {
+    "question": "カラーコード #00ff00 は緑色である。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 0,
+    "explanation": "緑の最大値です。",
+    "category": "CSS"
+  },
+  {
+    "question": "JPEGは可逆圧縮で画質劣化がない形式である。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 1,
+    "explanation": "JPEGは非可逆圧縮です。",
+    "category": "画像"
+  },
+  {
+    "question": "不要になったWebページはそのまま公開し続けるべきである。",
+    "choices": [
+      "正しい",
+      "正しくない"
+    ],
+    "correct": 1,
+    "explanation": "削除・リダイレクトが望ましいです。",
+    "category": "運用"
+  },
+  {
+    "question": "マウスを重ねた時にスタイルを適用するCSS擬似クラスはどれか。",
+    "choices": [
+      "#change:over",
+      "#change:down",
+      "#change:selected",
+      "#change:hover"
+    ],
+    "correct": 3,
+    "explanation": ":hover はマウスオーバー時に適用されます。",
+    "category": "CSS"
+  },
+  {
+    "question": "行の高さを指定するCSSプロパティはどれか。",
+    "choices": [
+      "height",
+      "display",
+      "line-box",
+      "line-height"
+    ],
+    "correct": 3,
+    "explanation": "line-height は行の高さを制御します。",
+    "category": "CSS"
+  },
+  {
+    "question": "OSIモデルのアプリケーション層のプロトコルはどれか。",
+    "choices": [
+      "HTTP",
+      "PPP",
+      "IP",
+      "TCP"
+    ],
+    "correct": 0,
+    "explanation": "HTTPはアプリケーション層です。",
+    "category": "ネットワーク"
+  },
+  {
+    "question": "p { background-color: #aaa; } の説明として正しいものはどれか。",
+    "choices": [
+      "id名がpの要素に適用",
+      "class名がpの要素に適用",
+      "全てのp要素に適用",
+      "エラーになる"
+    ],
+    "correct": 2,
+    "explanation": "要素セレクタなので全pタグに適用されます。",
+    "category": "CSS"
+  },
+  {
+    "question": "JIS X 8341-3のキーボード操作ガイドラインとして正しいものはどれか。",
+    "choices": [
+      "全ての機能をキーボードで操作できる",
+      "ナビだけ操作できればよい",
+      "ブラウザ機能のみ対象",
+      "UIだけ操作できればよい"
+    ],
+    "correct": 0,
+    "explanation": "全機能が対象です。",
+    "category": "アクセシビリティ"
+  },
+  {
+    "question": "DDoS攻撃の目的はどれか。",
+    "choices": [
+      "情報を盗む",
+      "サーバを過負荷にして停止させる",
+      "データ改ざん",
+      "ウイルス感染"
+    ],
+    "correct": 1,
+    "explanation": "大量アクセスでサービス停止させます。",
+    "category": "セキュリティ"
+  },
+  {
+    "question": "黒文字のとき最もコントラストが高い背景色はどれか。",
+    "choices": [
+      "#111111",
+      "#999999",
+      "#ffffff",
+      "#zzzzzz"
+    ],
+    "correct": 2,
+    "explanation": "白が最大コントラストです。",
+    "category": "アクセシビリティ"
+  },
+  {
+    "question": "li内の全てのb要素を対象にするセレクタはどれか。",
+    "choices": [
+      "li b",
+      "li > b",
+      "li ~ b",
+      "li::(b)"
+    ],
+    "correct": 0,
+    "explanation": "子孫セレクタです。",
+    "category": "CSS"
+  },
+  {
+    "question": "imgのアクセシビリティで重要な属性はどれか。",
+    "choices": [
+      "alt",
+      "lang",
+      "sizes",
+      "width"
+    ],
+    "correct": 0,
+    "explanation": "alt属性が最重要です。",
+    "category": "アクセシビリティ"
+  },
+  {
+    "question": "等幅フォントを表すfont-familyはどれか。",
+    "choices": [
+      "cursive",
+      "monospace",
+      "sans-serif",
+      "serif"
+    ],
+    "correct": 1,
+    "explanation": "monospaceが等幅です。",
+    "category": "CSS"
+  },
+  {
+    "question": "blockquote要素は何を表すか。",
+    "choices": [
+      "引用文",
+      "囲み記事",
+      "インデント範囲",
+      "段落"
+    ],
+    "correct": 0,
+    "explanation": "引用文です。",
+    "category": "HTML"
+  },
+  {
+    "question": "ボーダーの外側の余白を指定するプロパティはどれか。",
+    "choices": [
+      "padding",
+      "spacing",
+      "flame",
+      "margin"
+    ],
+    "correct": 3,
+    "explanation": "marginは外側の余白です。",
+    "category": "CSS"
+  },
+  {
+    "question": "サーバ証明書の目的はどれか。",
+    "choices": [
+      "デザイン改善",
+      "負荷軽減",
+      "通信の暗号化",
+      "SEO向上"
+    ],
+    "correct": 2,
+    "explanation": "HTTPSによる安全通信です。",
+    "category": "セキュリティ"
+  },
+  {
+    "question": "HTMLのルート要素はどれか。",
+    "choices": [
+      "rt",
+      "html",
+      "body",
+      "section"
+    ],
+    "correct": 1,
+    "explanation": "htmlがルート要素です。",
+    "category": "HTML"
+  }
+]

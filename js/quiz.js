@@ -6,9 +6,12 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let consecutiveCorrect = 0;
-let categoryStats = {};
 let answered = false;
-let currentCategory = null;
+const DEFAULT_QUESTION_SET = "07";
+const DEFAULT_QUESTION_FILE = `data/questions_${DEFAULT_QUESTION_SET}.json`;
+const QUESTION_SET_ALIASES = {
+  "0506": "data/questions_05_06.json",
+};
 
 // ==============================
 // 遷移タイミング設定
@@ -93,43 +96,79 @@ async function moveToNextQuestionWithFade(delayBeforeFade = 0) {
   await fadeInQuizContainer();
 }
 
+function getQuestionSet() {
+  const params = new URLSearchParams(location.search);
+  return params.get("set") || DEFAULT_QUESTION_SET;
+}
+
+function getQuestionFile() {
+  const set = getQuestionSet();
+
+  if (QUESTION_SET_ALIASES[set]) {
+    return QUESTION_SET_ALIASES[set];
+  }
+
+  if (/^\d+$/.test(set)) {
+    return `data/questions_${set}.json`;
+  }
+
+  return DEFAULT_QUESTION_FILE;
+}
+
+function initializeQuestions(data) {
+  questions = shuffleArray(data);
+
+  while (questions.length < 25) {
+    questions = questions.concat(shuffleArray(data));
+  }
+
+  questions = questions.slice(0, 25);
+
+  currentQuestionIndex = 0;
+  score = 0;
+  consecutiveCorrect = 0;
+
+  updateTitle();
+
+  showQuestion();
+}
+
 // ==============================
 // クイズ開始
 // ==============================
 
-function startQuiz(category = null) {
-  currentCategory = category;
+function startQuiz() {
+  const file = getQuestionFile();
 
-  fetch("data/questions_with_categories.json")
+  fetch(file)
     .then((response) => response.json())
 
     .then((data) => {
-      const filtered = category
-        ? data.filter((q) => q.category === category)
-        : data;
-
-      questions = shuffleArray(filtered);
-
-      while (questions.length < 25) {
-        questions = questions.concat(shuffleArray(filtered));
-      }
-
-      questions = questions.slice(0, 25);
-
-      currentQuestionIndex = 0;
-      score = 0;
-      consecutiveCorrect = 0;
-      categoryStats = {};
-
-      updateTitle(category);
-
-      showQuestion();
+      initializeQuestions(data);
     })
 
     .catch((error) => {
       console.error("問題データ読み込みエラー", error);
+
+      fetch(DEFAULT_QUESTION_FILE)
+        .then((response) => response.json())
+        .then((data) => {
+          initializeQuestions(data);
+        })
+        .catch((fallbackError) => {
+          console.error("デフォルト問題データ読み込みエラー", fallbackError);
+        });
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(location.search);
+
+  if (!params.has("set")) return;
+
+  showQuizUI();
+  startQuiz();
+});
 
 // ==============================
 // 問題表示
@@ -170,8 +209,6 @@ function showQuestion() {
       <h3 class="q-title">
 
         問題 ${currentQuestionIndex + 1}
-
-        <span class="ms-2">(${q.category})</span>
 
       </h3>
 

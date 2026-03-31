@@ -1,5 +1,4 @@
 function showQuizUI() {
-  document.querySelector(".category_box").style.display = "none";
   document.getElementById("start-container").style.display = "none";
 
   document.getElementById("progress-info").style.display = "block";
@@ -10,13 +9,18 @@ function showQuizUI() {
   document.getElementById("next-button").style.display = "none";
 }
 
-function updateTitle(category) {
+function updateTitle() {
   const title = document.querySelector(".bk_title");
+  const params = new URLSearchParams(location.search);
+  const set = params.get("set") || "07";
+  const label = set === "0506" ? "過去問（05-06）" : "令和7年度";
 
   if (!title) return;
 
-  title.innerHTML =
-    `<a href="index.html" id="title-reload">
+  title.innerHTML = `
+    <a href="index.html" id="title-reload">
       ウェブデザイン技能検定3級対策問題
-     </a>` + (category ? `<br><small>（${category}）</small>` : "");
+    </a>
+    <br><small>（${label}）</small>
+  `;
 }

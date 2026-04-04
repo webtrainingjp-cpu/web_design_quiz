@@ -10,53 +10,77 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="css/style.css?v=3" />
   </head>
 
   <body>
-  <div class="container">
-    <div class="box">
-      <h2>模擬試験結果</h2>
-
-      <div class="result">
-      今回の結果
-      <strong id="result">-</strong>
+    <header class="site-header">
+      <div class="site-header-inner container">
+        <h1 class="bk_title">
+          <a href="index.html"> ウェブデザイン技能検定3級 </a>
+        </h1>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-label="メニューを開く"
+        >
+          ☰
+        </button>
       </div>
-
-      <div>
-      ベストスコア
-      <strong id="best">-</strong>
+    </header>
+    <nav id="hamburger-menu" class="hamburger-menu" aria-label="サイトメニュー">
+      <ul>
+        <li><a href="index.html">最初に戻る</a></li>
+        <li><a href="record.html">記録を見る</a></li>
+        <li><a href="index.html?set=07">最新問題</a></li>
+        <li><a href="index.html?set=0506">過去問題</a></li>
+        <li><a href="https://fukuokamiyako.com">このサイトについて</a></li>
+      </ul>
+      <div class="menu-footer">
+        <small>© Fukuokamiyako</small>
       </div>
+    </nav>
 
-      <div class="history">
-      <h3>あなたの履歴</h3>
+    <div class="container">
+      <div class="box">
+        <h2>模擬試験結果</h2>
 
-      <ul id="history"></ul>
+        <div class="result">
+          今回の結果
+          <strong id="result">-</strong>
+        </div>
 
-      <p id="emptyMessage" class="empty"></p>
+        <div>
+          ベストスコア
+          <strong id="best">-</strong>
+        </div>
+
+        <div class="history">
+          <h3>あなたの履歴</h3>
+
+          <ul id="history"></ul>
+
+          <p id="emptyMessage" class="empty"></p>
+        </div>
+
+        <a href="index.html" class="btn">もう一度挑戦</a>
+
+        <br />
+
+        <button id="clearBtn" class="btn clear">履歴をリセット</button>
       </div>
-
-      <a href="index.html" class="btn">もう一度挑戦</a>
-
-      <br />
-
-      <button id="clearBtn" class="btn clear">履歴をリセット</button>
     </div>
-  </div>
-  <footer>
-      <p>[<a href="index.html">最初に戻る</a>]</p>
-      <small
-        >&copy;<a href="https://fukuokamiyako.com">Fukuokamiyako 2025</a>
-        &nbsp;</small
-      >
-    </footer>
 
     <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const hamburgerMenu = document.getElementById("hamburger-menu");
+
+      if (menuToggle && hamburgerMenu) {
+        menuToggle.addEventListener("click", () => {
+          hamburgerMenu.classList.toggle("active");
+        });
+      }
+
       /* 問題数 */
 
       const totalQuestions = 25;

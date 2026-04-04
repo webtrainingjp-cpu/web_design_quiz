@@ -11,14 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const menuToggle = document.getElementById("menu-toggle");
+  const hamburgerMenu = document.getElementById("hamburger-menu");
+
+  if (menuToggle && hamburgerMenu) {
+    menuToggle.addEventListener("click", () => {
+      hamburgerMenu.classList.toggle("active");
+    });
+  }
+
   // ランダムスタート
-  document.getElementById("start-button").addEventListener("click", () => {
-    showQuizUI();
-    startQuiz();
-  });
+  const startButton = document.getElementById("start-button");
+
+  if (startButton) {
+    startButton.addEventListener("click", () => {
+      showQuizUI();
+      startQuiz();
+    });
+  }
 
   // もう一度挑戦
-  document.getElementById("retry-button").addEventListener("click", () => {
-    location.reload();
-  });
+  const retryButton = document.getElementById("retry-button");
+
+  if (retryButton) {
+    retryButton.addEventListener("click", () => {
+      location.reload();
+    });
+  }
 });

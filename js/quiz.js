@@ -18,7 +18,7 @@ const QUESTION_SET_ALIASES = {
 // ==============================
 
 // 正解時は少し余韻を持たせてから次の問題へ進む
-const CORRECT_RESULT_DELAY = 1100;
+const CORRECT_RESULT_DELAY = 2000;
 
 // 不正解時はモーダルを閉じた後に少し待ってから進む
 const INCORRECT_RESULT_DELAY = 350;
@@ -90,6 +90,7 @@ async function moveToNextQuestionWithFade(delayBeforeFade = 0) {
   }
 
   await fadeOutQuizContainer();
+  await wait(50);
 
   nextQuestion();
 
@@ -131,6 +132,31 @@ function initializeQuestions(data) {
   updateTitle();
 
   showQuestion();
+}
+
+function resetQuestionUI() {
+  const buttons = document.querySelectorAll(".choice-btn, .option-btn");
+
+  buttons.forEach((btn) => {
+    btn.classList.remove(
+      "correct",
+      "wrong",
+      "selected",
+      "btn-success",
+      "btn-danger",
+    );
+    btn.classList.add("btn-outline-light");
+    btn.disabled = false;
+  });
+
+  const result =
+    document.getElementById("result") ||
+    document.getElementById("answer-result");
+
+  if (result) {
+    result.textContent = "";
+    result.className = "mt-3 fw-bold text-center";
+  }
 }
 
 // ==============================
@@ -176,12 +202,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function showQuestion() {
   answered = false;
+  resetQuestionUI();
 
   const container = document.getElementById("quiz-container");
   const progressInfo = document.getElementById("progress-info");
   const progressBar = document.getElementById("progress-bar");
-
   const q = questions[currentQuestionIndex];
+
+  if (!container || !progressInfo || !progressBar || !q) return;
 
   progressInfo.innerHTML = `問題 ${currentQuestionIndex + 1} / ${questions.length}`;
 
@@ -273,6 +301,7 @@ function checkAnswer(selectedIndex) {
   const q = questions[currentQuestionIndex];
 
   const buttons = document.querySelectorAll(".option-btn");
+  if (!q) return;
 
   const correctIndex = q.correct;
 
@@ -294,23 +323,32 @@ function checkAnswer(selectedIndex) {
     score++;
 
     // 結果表示を見やすくするため、正解用の見た目クラスを付ける
-    result.className = "answer-result-box answer-result-correct";
-    result.innerHTML = "✔ 正解！";
+    if (result) {
+      result.className = "answer-result-box answer-result-correct";
+      result.innerHTML = "✔ 正解！";
+    }
 
     // 正解表示を少し見せてから、ゆっくり次の問題へ切り替える
     moveToNextQuestionWithFade(CORRECT_RESULT_DELAY);
   } else {
     // 結果表示を見やすくするため、不正解用の見た目クラスを付ける
-    result.className = "answer-result-box answer-result-incorrect";
-    result.innerHTML = "✖ 不正解";
+    if (result) {
+      result.className = "answer-result-box answer-result-incorrect";
+      result.innerHTML = "✖ 不正解";
+    }
 
     const explanation = q.explanation;
 
     const modalText = document.getElementById("explanation-text");
-
-    modalText.innerHTML = explanation;
+    if (modalText) {
+      modalText.innerHTML = explanation;
+    }
 
     const modalElement = document.getElementById("explanationModal");
+    if (!modalElement) {
+      moveToNextQuestionWithFade(INCORRECT_RESULT_DELAY);
+      return;
+    }
 
     const modal = new bootstrap.Modal(modalElement);
 
@@ -353,12 +391,26 @@ function showFinalResult() {
   const container = document.getElementById("quiz-container");
   const progressInfo = document.getElementById("progress-info");
   const progressBar = document.getElementById("progress-bar");
-
-  container.style.display = "none";
-  progressInfo.style.display = "none";
-  document.querySelector(".progress").style.display = "none";
-
+  const progress = document.querySelector(".progress");
   const result = document.getElementById("final-result");
+
+  if (!result) return;
+
+  if (container) {
+    container.style.display = "none";
+  }
+
+  if (progressInfo) {
+    progressInfo.style.display = "none";
+  }
+
+  if (progressBar) {
+    progressBar.style.width = "0%";
+  }
+
+  if (progress) {
+    progress.style.display = "none";
+  }
 
   const percent = Math.round((score / questions.length) * 100);
 

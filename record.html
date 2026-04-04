@@ -10,7 +10,11 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css?v=3" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css?v=5" />
   </head>
 
   <body>
@@ -40,28 +44,24 @@
         <small>© Fukuokamiyako</small>
       </div>
     </nav>
+    <main>
+      <div class="wrapper container">
+        <h2 class="text-center">模擬試験結果</h2>
 
-    <div class="container">
-      <div class="box">
-        <h2>模擬試験結果</h2>
+        <div class="result-cards">
+          <div class="result-card">
+            <p class="label">今回の結果</p>
+            <p class="value" id="result">-</p>
+          </div>
 
-        <div class="result">
-          今回の結果
-          <strong id="result">-</strong>
+          <div class="result-card">
+            <p class="label">ベストスコア</p>
+            <p class="value" id="best">-</p>
+          </div>
         </div>
 
-        <div>
-          ベストスコア
-          <strong id="best">-</strong>
-        </div>
-
-        <div class="history">
-          <h3>あなたの履歴</h3>
-
-          <ul id="history"></ul>
-
-          <p id="emptyMessage" class="empty"></p>
-        </div>
+        <h3 class="mt-4">今の模擬試験を復習しておきましょう。</h3>
+        <ul id="review-history"></ul>
 
         <a href="index.html" class="btn">もう一度挑戦</a>
 
@@ -69,7 +69,7 @@
 
         <button id="clearBtn" class="btn clear">履歴をリセット</button>
       </div>
-    </div>
+    </main>
 
     <script>
       const menuToggle = document.getElementById("menu-toggle");
@@ -96,11 +96,19 @@
       /* localStorage取得（壊れ対策） */
 
       let history;
+      let reviewHistory;
 
       try {
         history = JSON.parse(localStorage.getItem("exam_history")) || [];
       } catch {
         history = [];
+      }
+
+      try {
+        reviewHistory =
+          JSON.parse(localStorage.getItem("review_history")) || [];
+      } catch {
+        reviewHistory = [];
       }
 
       /* スコアが有効なら保存 */
@@ -112,7 +120,13 @@
         correct <= totalQuestions
       ) {
         const record = {
-          date: new Date().toLocaleDateString(),
+          date: new Date().toLocaleString("ja-JP", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
 
           correct: correct,
 
@@ -152,20 +166,69 @@
 
       /* 履歴表示 */
 
-      const ul = document.getElementById("history");
+      const reviewUl = document.getElementById("review-history");
 
-      const emptyMessage = document.getElementById("emptyMessage");
-
-      if (history.length === 0) {
-        emptyMessage.textContent = "まだ記録がありません。";
-      } else {
-        history.forEach((item) => {
+      if (reviewUl) {
+        if (reviewHistory.length === 0) {
           const li = document.createElement("li");
+          li.textContent = "まだ復習データがありません。";
+          reviewUl.appendChild(li);
+        } else {
+          reviewHistory.forEach((item) => {
+            const li = document.createElement("li");
+            const choices = item.choices || [];
+            const userAnswer =
+              choices[item.userAnswer] !== undefined
+                ? choices[item.userAnswer]
+                : "未回答";
+            const correctAnswer =
+              choices[item.correct] !== undefined
+                ? choices[item.correct]
+                : "不明";
 
-          li.textContent = item.date + "　" + item.correct + " / " + item.total;
+            li.innerHTML = `
+              <div class="review-item">
+                <p class="review-question">
+                  <strong>Q. ${item.question}</strong>
+                </p>
 
-          ul.appendChild(li);
-        });
+                <ul class="review-choices">
+                  ${choices
+                    .map(
+                      (choice, i) => `
+                        <li class="
+                          ${i === item.correct ? "correct-choice" : ""}
+                          ${i === item.userAnswer ? "user-choice" : ""}
+                        ">
+                          ${choice}
+                        </li>
+                      `,
+                    )
+                    .join("")}
+                </ul>
+
+                <p class="review-answer ${item.userAnswer === item.correct ? "correct" : "wrong"}">
+                  ${
+                    item.userAnswer === item.correct
+                      ? '<i class="fa-solid fa-circle-check"></i>'
+                      : '<i class="fa-solid fa-circle-xmark"></i>'
+                  }
+                  あなたの回答：${userAnswer}
+                </p>
+
+                <p class="review-correct">
+                  正解：${correctAnswer}
+                </p>
+
+                <p class="review-explanation">
+                  ${item.explanation}
+                </p>
+              </div>
+            `;
+
+            reviewUl.appendChild(li);
+          });
+        }
       }
 
       /* 履歴リセット */

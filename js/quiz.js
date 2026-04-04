@@ -304,8 +304,30 @@ function checkAnswer(selectedIndex) {
   if (!q) return;
 
   const correctIndex = q.correct;
+  const choices = q.choices || [q.choice1, q.choice2, q.choice3, q.choice4];
 
   const result = document.getElementById("answer-result");
+
+  let reviewHistory;
+
+  try {
+    reviewHistory = JSON.parse(localStorage.getItem("review_history")) || [];
+  } catch {
+    reviewHistory = [];
+  }
+
+  reviewHistory.unshift({
+    date: new Date().toLocaleString(),
+    question: q.question,
+    choices: choices,
+    correct: q.correct,
+    userAnswer: selectedIndex,
+    explanation: q.explanation,
+  });
+
+  reviewHistory = reviewHistory.slice(0, 50);
+
+  localStorage.setItem("review_history", JSON.stringify(reviewHistory));
 
   buttons.forEach((btn, index) => {
     if (index === correctIndex) {
